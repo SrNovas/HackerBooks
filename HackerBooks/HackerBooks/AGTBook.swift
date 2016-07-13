@@ -11,11 +11,60 @@ import Foundation
 class AGTBook{
     
     //MARK: - Stored properties
-    let title : String
+    let title : String?
     let authors : [String]
     let tags : Set<String>
-    let imageUrl : NSURL
-    let pdfUrl : NSURL
+    let imageUrl : NSURL?
+    let pdfUrl : NSURL?
+    
+    //MARK: - Computed properties
+    var titleName : String?{
+        
+        get{
+            
+            guard let myTitle = title else {
+                
+                return "Al carajo, title a nil"
+                
+            }
+            
+            return myTitle
+            
+        }
+        
+    }
+    
+    var imageSource : NSURL?{
+        
+        get{
+            
+            guard let myImage = imageUrl else{
+                
+                return imageUrl
+                
+            }
+            
+            return myImage
+            
+        }
+        
+    }
+    
+    var pdfSource : NSURL?{
+        
+        get{
+            
+            guard let myPdf = pdfUrl else{
+                
+                return pdfUrl
+                
+            }
+            
+            return myPdf
+            
+        }
+        
+    }
     
     //MARK: - Initialization
     init(title : String, authors : [String], tags : Set<String>, imageUrl : NSURL, pdfUrl : NSURL){

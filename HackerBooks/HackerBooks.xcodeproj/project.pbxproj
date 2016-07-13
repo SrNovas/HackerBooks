@@ -14,6 +14,7 @@
 		3A92E0DD1D368E270026F878 /* HackerBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E0DC1D368E270026F878 /* HackerBooksUITests.swift */; };
 		3A92E0F21D368F430026F878 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3A92E0F11D368F430026F878 /* .gitignore */; };
 		3A92E0F41D3690B50026F878 /* AGTBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E0F31D3690B50026F878 /* AGTBook.swift */; };
+		3A92E0F81D369E4D0026F878 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A92E0F71D369E4D0026F878 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3A92E0DE1D368E270026F878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A92E0F11D368F430026F878 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3A92E0F31D3690B50026F878 /* AGTBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGTBook.swift; sourceTree = "<group>"; };
+		3A92E0F71D369E4D0026F878 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				3A92E0F31D3690B50026F878 /* AGTBook.swift */,
+				3A92E0F71D369E4D0026F878 /* Tag.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A92E0F81D369E4D0026F878 /* Tag.swift in Sources */,
 				3A92E0BD1D368E260026F878 /* AppDelegate.swift in Sources */,
 				3A92E0F41D3690B50026F878 /* AGTBook.swift in Sources */,
 			);
