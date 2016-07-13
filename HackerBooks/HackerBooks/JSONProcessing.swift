@@ -78,9 +78,17 @@ class JSONProcessing{
  
          */
         
+        
+        
+        let splitAuthor = authors.componentsSeparatedByString(", ")
+        let splitTags = tags.componentsSeparatedByString(", ")
+
         //init(title : String, authors : [String], tags : [Tag], imageUrl : NSURL, pdfUrl : NSURL)
         //Problema, a authors y tags tengo que darle formato array, además, fijo que viene doble en el JSON (del palo "X, Y") y tengo que separarlo...
-        return AGTBook(title : title, authors : authors, tags : tags, imageUrl : image_url, pdfUrl : pdf_url)
+        
+        //Bombazo, tags es array del tipo [Tag], asi que no puedo cambiarlo a uno de tipo [string], hay que hacer algo para transformarlo transformarlo. Quizá crearme un array [string], recorrer mi [tag] e insertarlo en el nuevo
+        
+        return AGTBook(title : title, authors : splitAuthor, tags : splitTags, imageUrl : image_url, pdfUrl : pdf_url)
         
     }
     
