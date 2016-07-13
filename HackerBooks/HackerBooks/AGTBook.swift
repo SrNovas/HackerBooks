@@ -13,13 +13,14 @@ class AGTBook : Equatable, Hashable{
     //MARK: - Stored properties
     let title : String
     let authors : [String]
-    let tags : Set<String>
+    //tags no puede ser un Set<String>, tiene que ser un array de la clase Tag, sino... ¿pa qué?
+    let tags : [Tag]
     let imageUrl : NSURL
     let pdfUrl : NSURL
     
     
     //MARK: - Initialization
-    init(title : String, authors : [String], tags : Set<String>, imageUrl : NSURL, pdfUrl : NSURL){
+    init(title : String, authors : [String], tags : [Tag], imageUrl : NSURL, pdfUrl : NSURL){
 
         self.title = title
         self.authors = authors
