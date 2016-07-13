@@ -66,7 +66,7 @@ func ==(lhs : AGTBook, rhs : AGTBook) -> Bool{
         
     }
     
-    //Miro si tienen el mismo tipo de clase
+    //Miro si tienen el mismo tipo de clase, si son iguales OK
     guard (lhs.dynamicType == rhs.dynamicType) else{
         
         return false

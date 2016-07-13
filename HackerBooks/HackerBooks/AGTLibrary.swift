@@ -10,6 +10,7 @@ import Foundation
 
 class AGTLibrary{
     
+    //var library: [Tag: Set<Book>]
     
     
 }
