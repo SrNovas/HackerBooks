@@ -8,63 +8,15 @@
 
 import Foundation
 
-class AGTBook{
+class AGTBook : Equatable, Hashable{
     
     //MARK: - Stored properties
-    let title : String?
+    let title : String
     let authors : [String]
     let tags : Set<String>
-    let imageUrl : NSURL?
-    let pdfUrl : NSURL?
+    let imageUrl : NSURL
+    let pdfUrl : NSURL
     
-    //MARK: - Computed properties
-    var titleName : String?{
-        
-        get{
-            
-            guard let myTitle = title else {
-                
-                return "Al carajo, title a nil"
-                
-            }
-            
-            return myTitle
-            
-        }
-        
-    }
-    
-    var imageSource : NSURL?{
-        
-        get{
-            
-            guard let myImage = imageUrl else{
-                
-                return imageUrl
-                
-            }
-            
-            return myImage
-            
-        }
-        
-    }
-    
-    var pdfSource : NSURL?{
-        
-        get{
-            
-            guard let myPdf = pdfUrl else{
-                
-                return pdfUrl
-                
-            }
-            
-            return myPdf
-            
-        }
-        
-    }
     
     //MARK: - Initialization
     init(title : String, authors : [String], tags : Set<String>, imageUrl : NSURL, pdfUrl : NSURL){
@@ -77,4 +29,63 @@ class AGTBook{
 
     }
     
+    //MARK: - Proxies
+    //Para comparar, no voy a ordenar (evisto el proxyForSorting)
+    var proxyForComparison : String{
+        
+        get{
+            
+            return "\(title)\(authors)\(tags)\(imageUrl)\(pdfUrl)"
+            
+        }
+        
+    }
+    
+    //MARK: - Hashable
+    //public var hashValue: Int { get }
+    var hashValue: Int {
+    
+        get{
+            
+            return title.hashValue
+            
+        }
+    
+    }
+    
 }
+
+//MARK: - Equatable
+//public func ==(lhs: Self, rhs: Self) -> Bool
+func ==(lhs : AGTBook, rhs : AGTBook) -> Bool{
+
+    guard !(lhs === rhs) else{
+        
+        return true
+        
+    }
+    
+    //Miro si tienen el mismo tipo de clase
+    guard (lhs.dynamicType == rhs.dynamicType) else{
+        
+        return false
+        
+    }
+    
+    return lhs.proxyForComparison == rhs.proxyForComparison
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

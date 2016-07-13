@@ -41,7 +41,7 @@ class Tag : Comparable, Equatable, Hashable{
         
     }
     
-    //MARK: - Hasable
+    //MARK: - Hashable
     //public var hashValue: Int { get }
     var hashValue: Int{
         
