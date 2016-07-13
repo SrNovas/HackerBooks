@@ -31,7 +31,7 @@ class AGTBook : Equatable, Hashable{
     }
     
     //MARK: - Proxies
-    //Para comparar, no voy a ordenar (evisto el proxyForSorting)
+    //Para comparar, no voy a ordenar (evito el proxyForSorting)
     var proxyForComparison : String{
         
         get{
@@ -67,6 +67,7 @@ func ==(lhs : AGTBook, rhs : AGTBook) -> Bool{
     }
     
     //Miro si tienen el mismo tipo de clase, si son iguales OK
+    //Buscar mas info de esto...
     guard (lhs.dynamicType == rhs.dynamicType) else{
         
         return false

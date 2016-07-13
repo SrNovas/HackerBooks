@@ -10,7 +10,7 @@ import Foundation
 
 class AGTLibrary{
     
-    //var library: [Tag: Set<Book>]
+    //var library: [Tag: Set<Book>] MJ Slack
     
     
 }

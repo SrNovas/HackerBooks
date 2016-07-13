@@ -65,28 +65,12 @@ class JSONProcessing{
             throw commonErrors.wrongJSONFormat
             
         }
-        
-        /* Stackoverfload tiene la solución
-        
-         import Foundation
- 
-         var fullName: String = "First Last"
-         let fullNameArr = fullName.componentsSeparatedByString(" ")
- 
-         var firstName: String = fullNameArr[0]
-         var lastName: String = fullNameArr[1]
- 
-         */
-        
-        
-        
+                
+        //Problema, a authors y tags tengo que darle formato array, además, fijo que viene doble en el JSON (del palo "X, Y") y tengo que separarlo...
         let splitAuthor = authors.componentsSeparatedByString(", ")
         let splitTags = tags.componentsSeparatedByString(", ")
-
-        //init(title : String, authors : [String], tags : [Tag], imageUrl : NSURL, pdfUrl : NSURL)
-        //Problema, a authors y tags tengo que darle formato array, además, fijo que viene doble en el JSON (del palo "X, Y") y tengo que separarlo...
         
-        //Bombazo, tags es array del tipo [Tag], asi que no puedo cambiarlo a uno de tipo [string], hay que hacer algo para transformarlo transformarlo. Quizá crearme un array [string], recorrer mi [tag] e insertarlo en el nuevo
+        //Bombazo, tags es array del tipo [Tag], asi que no puedo cambiarlo a uno de tipo [string], hay que hacer algo para transformarlo. Quizá crearme un array [string], recorrer mi [tag] e insertarlo en el nuevo
         
         return AGTBook(title : title, authors : splitAuthor, tags : splitTags, imageUrl : image_url, pdfUrl : pdf_url)
         
