@@ -65,14 +65,33 @@ class JSONProcessing{
             throw commonErrors.wrongJSONFormat
             
         }
-                
-        //Problema, a authors y tags tengo que darle formato array, además, fijo que viene doble en el JSON (del palo "X, Y") y tengo que separarlo...
+        
+        //Procesar authors y tags, desde el JSON vienen de la siguiente manera "X, Y", tengo que separarlos
+        
+        //Para este no hace falta tanta historia, la función magica te lo trata como un "array", así que a piñón al return y elimino lo sobrante
+        //var authorsArray : [String]
         let splitAuthor = authors.componentsSeparatedByString(", ")
+        
+        /* authorsArray = []
+        for elements in splitAuthor{
+            
+            authorsArray.append(elements)
+            
+        } */
+        
+        var tagsArray = [Tag]()
         let splitTags = tags.componentsSeparatedByString(", ")
+        
+        for elements2 in splitTags{
+            
+            tagsArray.append(elements2)
+            
+        }
+        
         
         //Bombazo, tags es array del tipo [Tag], asi que no puedo cambiarlo a uno de tipo [string], hay que hacer algo para transformarlo. Quizá crearme un array [string], recorrer mi [tag] e insertarlo en el nuevo
         
-        return AGTBook(title : title, authors : splitAuthor, tags : splitTags, imageUrl : image_url, pdfUrl : pdf_url)
+        return AGTBook(title : title, authors : splitAuthor, tags : tagsArray, imageUrl : image_url, pdfUrl : pdf_url)
         
     }
     
