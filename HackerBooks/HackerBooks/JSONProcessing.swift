@@ -72,20 +72,19 @@ class JSONProcessing{
         //Para este no hace falta tanta historia, la función magica te lo trata como un "array", así que a piñón al return y elimino lo sobrante, se queda en una línea
         let splitAuthor = authors.componentsSeparatedByString(", ")
         
-        //Ahora con Tags...
+        //Ahora con Tags, creo array y le inserto...
         var tagsArray = [Tag]()
         let splitTags = tags.componentsSeparatedByString(", ")
         
         for elements in splitTags {
             
+            //
             //Meto en el array mu nombre del tag (de ahí nameTag, que está en mi clase Tag)
             //¡¡¡¡¡¡¡¡¡¡Ojo por que estoy insertando, puedo estar metiendo repetidos!!!!!!!!!!
+            //
             tagsArray.append(Tag(nameTag: elements))
             
         }
-        
-        
-        //Bombazo, tags es array del tipo [Tag], asi que no puedo cambiarlo a uno de tipo [string], hay que hacer algo para transformarlo. Quizá crearme un array [string], recorrer mi [tag] e insertarlo en el nuevo
         
         return AGTBook(title : title, authors : splitAuthor, tags : tagsArray, imageUrl : image_url, pdfUrl : pdf_url)
         
