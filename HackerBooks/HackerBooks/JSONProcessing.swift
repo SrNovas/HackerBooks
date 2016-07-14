@@ -66,25 +66,21 @@ class JSONProcessing{
             
         }
         
+        //MARK: - Separate
         //Procesar authors y tags, desde el JSON vienen de la siguiente manera "X, Y", tengo que separarlos
         
-        //Para este no hace falta tanta historia, la función magica te lo trata como un "array", así que a piñón al return y elimino lo sobrante
-        //var authorsArray : [String]
+        //Para este no hace falta tanta historia, la función magica te lo trata como un "array", así que a piñón al return y elimino lo sobrante, se queda en una línea
         let splitAuthor = authors.componentsSeparatedByString(", ")
         
-        /* authorsArray = []
-        for elements in splitAuthor{
-            
-            authorsArray.append(elements)
-            
-        } */
-        
+        //Ahora con Tags...
         var tagsArray = [Tag]()
         let splitTags = tags.componentsSeparatedByString(", ")
         
-        for elements2 in splitTags{
+        for elements in splitTags {
             
-            tagsArray.append(elements2)
+            //Meto en el array mu nombre del tag (de ahí nameTag, que está en mi clase Tag)
+            //¡¡¡¡¡¡¡¡¡¡Ojo por que estoy insertando, puedo estar metiendo repetidos!!!!!!!!!!
+            tagsArray.append(Tag(nameTag: elements))
             
         }
         
