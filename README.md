@@ -28,4 +28,5 @@ Algo bastante útil podría ser una especie de metabuscardor del tipo kayak, int
 
 
 Comentarios
+
 Tras una segunda oportuninidad, me incorporé al BOOT 3 prácticamente a una semana de la entrega de la práctica, así que en esos días he visto los 12 vídeos y asimilados conceptos (no todos los que debería). Sin duda alguna, la práctica no refleja de ninguna de las maneras el tiempo que le he dedicado durante esta semana.
