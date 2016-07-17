@@ -58,21 +58,25 @@ class AGTLibrary{
         
     }
     
-    func booksPerTag (tag : Tag) -> [AGTBook]{
-        
-        var mybooks : [AGTBook]
-        
-        if(self.libraryDictionary.keys.contains(Tag(nameTag: tag.nameTag))){
-            
-            mybooks = self.libraryDictionary[Tag(nameTag : tag.nameTag)]!
-            
-            //Aquí hay que devolver la func <(lhs : Tag, rhs : Tag) -> Bool
-            return <(
-            
-        }
-        
-        return mybooks
-        
-    }
+//    func booksPerTag (tag : Tag) -> [AGTBook]{
+//        
+//        var mybooks : [AGTBook]
+//        
+//        if(self.libraryDictionary.keys.contains(Tag(nameTag: tag.nameTag))){
+//            
+//            mybooks = self.libraryDictionary[Tag(nameTag : tag.nameTag)]!
+//            
+//            
+//        }
+//        
+//        //Aquí habría que devolver la func <(lhs : Tag, rhs : Tag) -> Bool para ver quien es menor?
+//        //return <(
+//        
+//        //Al poner mybooks solo me invoca el .sort
+//        //mybooks.sort(<#T##isOrderedBefore: (AGTBook, AGTBook) -> Bool##(AGTBook, AGTBook) -> Bool#>)
+//        
+//        //return mybooks
+//        
+//    }
     
 }
