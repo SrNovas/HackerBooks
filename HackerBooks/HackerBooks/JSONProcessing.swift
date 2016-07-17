@@ -78,38 +78,63 @@ class JSONProcessing{
         
         for elements in splitTags {
             
-            //
-            //Meto en el array mu nombre del tag (de ahí nameTag, que está en mi clase Tag)
-            //¡¡¡¡¡¡¡¡¡¡Ojo por que estoy insertando, puedo estar metiendo repetidos!!!!!!!!!!
-            //
+            //Meto en el array el nombre del tag (de ahí nameTag, que está en mi clase Tag
             tagsArray.append(Tag(nameTag: elements))
             
         }
         
-        return AGTBook(title : title, authors : splitAuthor, tags : tagsArray, imageUrl : image_url, pdfUrl : pdf_url)
+        return AGTBook(title : title, authors : splitAuthor, tags : tagsArray,
+                       imageUrl : image_url, pdfUrl : pdf_url)
         
     }
 
-    //MARK - Loading JSON
-    //El bundle (carpeta que se hace pasar por fichero) se usa para indcar donde está alojado (si no lo indicas busca en el principal)
-    func loadFromLocalFile(fileName name : String, bundle : NSBundle
-        = NSBundle.mainBundle()) throws -> JSONArray{
-        
-        if let url = NSBundle.mainBundle().URLForResource("books_readable", withExtension: "json"),
-            data = NSData(contentsOfURL: url),
-            maybeArray = try? NSJSONSerialization.JSONObjectWithData(data,
-                                                                     options: NSJSONReadingOptions.MutableContainers) as? JSONArray,
-            array = maybeArray{
-            
-            return array
-            
-        }else{
-            
-            throw commonErrors.jsonParsingError
-            
-        }
-        
-    }
+//    //MARK - Loading JSON
+//    //El bundle (carpeta que se hace pasar por fichero) se usa para indcar donde está alojado (si no lo indicas busca en el principal)
+//    func loadFromLocalFile(fileName name : String, bundle : NSBundle
+//        = NSBundle.mainBundle()) throws -> JSONArray{
+//        
+//        if let url = bundle.URLForResource(name, withExtension: "json"),
+//            data = NSData(contentsOfURL: url),
+//            maybeArray = try? NSJSONSerialization.JSONObjectWithData(data,
+//                                                                     options: NSJSONReadingOptions.MutableContainers) as? JSONArray,
+//            array = maybeArray{
+//            
+//            return array
+//            
+//        }else{
+//            
+//            throw commonErrors.jsonParsingError
+//            
+//        }
+//        
+//    }
+
+    func decode(myBook json : JSONArray) -> [AGTBook]{
     
+        var array = [AGTBook]()
+    
+        do{
+        
+            for each in json{
+            
+                print(each)
+            
+                let tryDecode = try decode(AGTBook: each)
+            
+                array.append(tryDecode)
+                print(array)
+            
+            }
+        
+        }catch{
+        
+            fatalError("Que el señor nos pille confesados")
+        
+        }
+    
+        return array
+    
+    }
+
 }
 

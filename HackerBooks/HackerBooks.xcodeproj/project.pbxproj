@@ -23,6 +23,7 @@
 		3ABE01B41D3AA0FB006E951F /* BooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ABE01B21D3AA0FB006E951F /* BooksViewController.xib */; };
 		3ABE01B71D3B8050006E951F /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE01B51D3B8050006E951F /* PDFViewController.swift */; };
 		3ABE01B81D3B8050006E951F /* PDFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ABE01B61D3B8050006E951F /* PDFViewController.xib */; };
+		3ABE01BA1D3BAF78006E951F /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE01B91D3BAF78006E951F /* LibraryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3ABE01B21D3AA0FB006E951F /* BooksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BooksViewController.xib; sourceTree = "<group>"; };
 		3ABE01B51D3B8050006E951F /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		3ABE01B61D3B8050006E951F /* PDFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDFViewController.xib; sourceTree = "<group>"; };
+		3ABE01B91D3BAF78006E951F /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				3ABE01B21D3AA0FB006E951F /* BooksViewController.xib */,
 				3ABE01B51D3B8050006E951F /* PDFViewController.swift */,
 				3ABE01B61D3B8050006E951F /* PDFViewController.xib */,
+				3ABE01B91D3BAF78006E951F /* LibraryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				3A92E0F41D3690B50026F878 /* AGTBook.swift in Sources */,
 				3A92E0FE1D36DE0D0026F878 /* Errors.swift in Sources */,
 				3A92E0FC1D36DDED0026F878 /* JSONProcessing.swift in Sources */,
+				3ABE01BA1D3BAF78006E951F /* LibraryViewController.swift in Sources */,
 				3ABE01B31D3AA0FB006E951F /* BooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

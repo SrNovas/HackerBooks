@@ -22,49 +22,21 @@ import Foundation
 
 class AGTLibrary{
     
-    var library: [Tag : [AGTBook]]
-    
-    //Array de libros
-    var books : [AGTBook]
-    
-    var tags : [Tag]
-    
+    var booksArray = [AGTBook]()
+    var libraryDictionary = [Tag : [AGTBook]]()
     
     //MARK: - Initialization
-    init(library : [Tag : [AGTBook]], books : [AGTBook], tags : [Tag]){
+    init(arrayBooks libros : [AGTBook]){
         
-        self.library = library
-        self.books = books
-        self.tags = tags
+        libraryDictionary = [Tag : [AGTBook]]()
         
-    }
-    
-    
-//    var numberOfTags : Int{
-//        
-//        get{
-//            
-//            return self.library.keys.count
-//            
-//        }
-//        
-//    }
-    
-    //Array de tags
-    
-    
-    //Recorrer los libros de "books", miro sus tags e inserto en el diccionario
-    func createDictionary(arrayBooks books : [AGTBook])-> Void{
-        
-        self.library = [Tag : [AGTBook]]()
-        
-        for book in books{
+        for book in libros{
             
             for tag in book.tags{
                 
-                if(self.library.keys.contains(Tag(nameTag: tag.nameTag))){
+                if(self.libraryDictionary.keys.contains(Tag(nameTag: tag.nameTag))){
                     
-                    self.library[Tag(nameTag: tag.nameTag)]?.append(book)
+                    self.libraryDictionary[Tag(nameTag: tag.nameTag)]?.append(book)
                     
                 }
                 
@@ -75,6 +47,32 @@ class AGTLibrary{
     }
     
     
+    //Número de tags
+    var numberOfTags : Int{
+        
+        get{
+            
+            return self.libraryDictionary.keys.count
+            
+        }
+        
+    }
     
+    func booksPerTag (tag : Tag) -> [AGTBook]{
+        
+        var mybooks : [AGTBook]
+        
+        if(self.libraryDictionary.keys.contains(Tag(nameTag: tag.nameTag))){
+            
+            mybooks = self.libraryDictionary[Tag(nameTag : tag.nameTag)]!
+            
+            //Aquí hay que devolver la func <(lhs : Tag, rhs : Tag) -> Bool
+            return <(
+            
+        }
+        
+        return mybooks
+        
+    }
     
 }
