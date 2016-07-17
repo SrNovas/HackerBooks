@@ -12,7 +12,7 @@ import UIKit
 /*
  {
  "authors": "Scott Chacon, Ben Straub",
- "image_url": "http://hackershelf.com/media/cache/b4/24/b42409de128aa7f1c9abbbfa549914de.jpg",
+ "image_url": "https://hackershelf.com/media/cache/b4/24/b42409de128aa7f1c9abbbfa549914de.jpg",
  "pdf_url": "https://progit2.s3.amazonaws.com/en/2015-03-06-439c2/progit-en.376.pdf",
  "tags": "version control, git",
  "title": "Pro Git"
@@ -89,5 +89,27 @@ class JSONProcessing{
         return AGTBook(title : title, authors : splitAuthor, tags : tagsArray, imageUrl : image_url, pdfUrl : pdf_url)
         
     }
+
+    //MARK - Loading JSON
+    //El bundle (carpeta que se hace pasar por fichero) se usa para indcar donde está alojado (si no lo indicas busca en el principal)
+    func loadFromLocalFile(fileName name : String, bundle : NSBundle
+        = NSBundle.mainBundle()) throws -> JSONArray{
+        
+        if let url = NSBundle.mainBundle().URLForResource("books_readable", withExtension: "json"),
+            data = NSData(contentsOfURL: url),
+            maybeArray = try? NSJSONSerialization.JSONObjectWithData(data,
+                                                                     options: NSJSONReadingOptions.MutableContainers) as? JSONArray,
+            array = maybeArray{
+            
+            return array
+            
+        }else{
+            
+            throw commonErrors.jsonParsingError
+            
+        }
+        
+    }
     
 }
+

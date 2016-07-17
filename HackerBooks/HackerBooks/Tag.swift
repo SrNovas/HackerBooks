@@ -56,6 +56,8 @@ class Tag : Comparable, Equatable, Hashable{
     
 }
 
+//Igual tengo que poner todos los tags en mayusculas para evitar repetidos, abc != AbC
+
 //MARK: - Comparable
 //public func <(lhs: Self, rhs: Self) -> Bool, comparar 2 clases, ver cual es menor y poder ordenar
 func <(lhs : Tag, rhs : Tag) -> Bool{

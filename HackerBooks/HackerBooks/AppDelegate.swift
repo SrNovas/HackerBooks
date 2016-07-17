@@ -6,6 +6,16 @@
 //  Copyright © 2016 NovasFactory. All rights reserved.
 //
 
+/*
+ 
+ "authors": "Scott Chacon, Ben Straub",
+ "image_url": "https://hackershelf.com/media/cache/b4/24/b42409de128aa7f1c9abbbfa549914de.jpg",
+ "pdf_url": "https://progit2.s3.amazonaws.com/en/2015-03-06-439c2/progit-en.376.pdf",
+ "tags": "version control, git",
+ "title": "Pro Git"
+ 
+ */
+
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +26,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var miTag = [Tag]()
+        var miAuthor = [String]()
+        
+        miTag.append(Tag(nameTag: "version control, git"))
+        miAuthor.append("Scott Chacon, Ben Straub")
+        
+        //Modelo para empezar
+        let model = AGTBook(title: "Pro Git",
+                            authors: miAuthor,
+                            tags: miTag,
+                            imageUrl: NSURL(string: "http://hackershelf.com/media/cache/b4/24/b42409de128aa7f1c9abbbfa549914de.jpg")!,
+                            pdfUrl : NSURL(string: "http://progit2.s3.amazonaws.com/en/2015-03-06-439c2/progit-en.376.pdf")!)
+        
+        //Crear window
+        window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        
+        //Crear un VC
+        let vc = BooksViewController(model: model)
+        
+        //Metemos en NavigationController
+        let nav = UINavigationController(rootViewController: vc)
+        
+        //Asignar el nac como rootVC
+        window?.rootViewController = nav
+        
+        //Hacer visible & key a la window
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
