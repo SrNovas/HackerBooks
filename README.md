@@ -25,3 +25,7 @@ Podríamos añadirle una funcionalidad de sugerencias, es decir, una vez tengo m
 Usando esta App como "plantilla", ¿qué otras versiones se te ocurren? ¿Algo que puedas monetizar?
 
 Algo bastante útil podría ser una especie de metabuscardor del tipo kayak, introduces el título de un libro (o ISBN) y te muestra los precios del mismo en las librerías mas cercanas a tu ubicación (tiraríamos de ubicación GPS). Con ello el usuario se ahorarría unos eurillos (durante el curso académico nos haríamos de oro).
+
+
+Comentarios
+Tras una segunda oportuninidad, me incorporé al BOOT 3 prácticamente a una semana de la entrega de la práctica, así que en esos días he visto los 12 vídeos y asimilados conceptos (no todos los que debería). Sin duda alguna, la práctica no refleja de ninguna de las maneras el tiempo que le he dedicado durante esta semana.
